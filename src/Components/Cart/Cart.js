@@ -1,11 +1,14 @@
+import React, { useContext } from "react";
+import CartContext from "../../store/cart-context";
 import Modal from "../UI/Modal";
 import classes from "./Cart.module.css";
 
 const Cart = (props) => {
+  const cartcntx = useContext(CartContext);
   const cartItems = (
     <ul className={classes["cart-items"]}>
-      {[{ id: "c1", name: "Susla", amount: 2, price: 15 }].map((item) => (
-        <li>{item.name}</li>
+      {cartcntx.items.map((item) => (
+        <li>Name:{item.name} Price:{item.price} Quantity:{item.quantity}</li>
       ))}
     </ul>
   );
