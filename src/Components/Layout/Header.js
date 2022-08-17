@@ -5,6 +5,7 @@ import HeaderCartButton from "./HeaderCartButton";
 
 
 const Header = (props) => {
+  console.log(props, '---------headerprops');
   return (
     <Fragment>
       <header className={classes.header}>
